@@ -1462,7 +1462,7 @@ tdiff(FILETIME fstart, FILETIME fend)
 static int
 Adjust(int milliseconds, int diff)
 {
-    if (milliseconds != INFINITY) {
+    if (milliseconds != INFINITY_LIBNCURSES) {
 	milliseconds -= diff;
 	if (milliseconds < 0)
 	    milliseconds = 0;
@@ -1543,7 +1543,7 @@ console_twait(
 		      milliseconds, mode));
 
     if (milliseconds < 0)
-	milliseconds = INFINITY;
+	milliseconds = INFINITY_LIBNCURSES;
 
     memset(&inp_rec, 0, sizeof(inp_rec));
 
